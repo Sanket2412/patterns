@@ -1,17 +1,16 @@
 const printPattern = (n) => {
-    for (let index = 0; index < n; index++) {
-      for (let space1 = 0; space1 < index; space1++) {
-        process.stdout.write(" ");
-      }
-      for (let star = 0; star < 2 * n - (2 * index + 1); star++) {
-        process.stdout.write("*");
-      }
-      for (let space1 = 0; space1 < index; space1++) {
-        process.stdout.write(" ");
-      }
-      process.stdout.write("\n");
+  for (let index = 0; index <= n; index++) {
+    for (let j = 0; j < index; j++) {
+      process.stdout.write("*");
     }
-  };
-  
-  printPattern(5);
-  
+    process.stdout.write("\n");
+  }
+  for (let i = n-1; i >= 0; i--) {
+    for (let j = 0; j < i; j++) {
+      process.stdout.write("*");
+    }
+    process.stdout.write("\n");
+  }
+};
+
+printPattern(5);
